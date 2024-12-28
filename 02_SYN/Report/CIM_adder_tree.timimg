@@ -1,0 +1,91 @@
+Error: Unit conflict found: Constraint time unit is 'ns'; main library time unit is 'ps'. (IFS-001)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CIM_adder_tree
+Version: T-2022.03
+Date   : Sat Dec 28 17:04:49 2024
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_INVBUF_RVT_TT_08302018
+Wire Load Model Mode: top
+
+  Startpoint: Input_23[0]
+              (input port clocked by clk)
+  Endpoint: input_buffer_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                  750.00     750.00 r
+  Input_23[0] (in)                                        0.00     750.00 r
+  U142/Y (AND2x2_ASAP7_75t_R)                            18.28     768.28 r
+  add_22_root_add_0_root_add_98_31/U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         36.43     804.71 f
+  U223/Y (INVx1_ASAP7_75t_R)                             16.43     821.15 r
+  add_10_root_add_0_root_add_98_31/U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         39.52     860.67 f
+  U235/Y (INVx1_ASAP7_75t_R)                             16.66     877.32 r
+  add_4_root_add_0_root_add_98_31/U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         39.56     916.88 f
+  U263/Y (INVx1_ASAP7_75t_R)                             16.66     933.55 r
+  add_1_root_add_0_root_add_98_31/U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         36.50     970.05 r
+  U435/Y (INVx1_ASAP7_75t_R)                             17.50     987.55 f
+  add_0_root_add_0_root_add_98_31/B[1] (CIM_adder_tree_DW01_add_1)
+                                                          0.00     987.55 f
+  add_0_root_add_0_root_add_98_31/U1_1/CON (FAx1_ASAP7_75t_R)
+                                                         22.82    1010.37 r
+  add_0_root_add_0_root_add_98_31/U8/Y (INVx1_ASAP7_75t_R)
+                                                         15.19    1025.57 f
+  add_0_root_add_0_root_add_98_31/U1_2/CON (FAx1_ASAP7_75t_R)
+                                                         20.28    1045.85 r
+  add_0_root_add_0_root_add_98_31/U7/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1061.11 f
+  add_0_root_add_0_root_add_98_31/U1_3/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1081.41 r
+  add_0_root_add_0_root_add_98_31/U6/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1096.68 f
+  add_0_root_add_0_root_add_98_31/U1_4/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1116.98 r
+  add_0_root_add_0_root_add_98_31/U5/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1132.25 f
+  add_0_root_add_0_root_add_98_31/U1_5/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1152.54 r
+  add_0_root_add_0_root_add_98_31/U4/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1167.81 f
+  add_0_root_add_0_root_add_98_31/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1188.11 r
+  add_0_root_add_0_root_add_98_31/U3/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1203.38 f
+  add_0_root_add_0_root_add_98_31/U1_7/SN (FAx1_ASAP7_75t_R)
+                                                         35.42    1238.80 r
+  add_0_root_add_0_root_add_98_31/U10/Y (INVx1_ASAP7_75t_R)
+                                                         10.95    1249.75 f
+  add_0_root_add_0_root_add_98_31/SUM[7] (CIM_adder_tree_DW01_add_1)
+                                                          0.00    1249.75 f
+  U496/Y (INVx1_ASAP7_75t_R)                              7.55    1257.30 r
+  input_buffer_reg[7]/D (ASYNC_DFFHx1_ASAP7_75t_R)        0.00    1257.30 r
+  data arrival time                                               1257.30
+
+  clock clk (rise edge)                                1500.00    1500.00
+  clock network delay (ideal)                             0.00    1500.00
+  input_buffer_reg[7]/CLK (ASYNC_DFFHx1_ASAP7_75t_R)      0.00    1500.00 r
+  library setup time                                    -16.47    1483.53
+  data required time                                              1483.53
+  --------------------------------------------------------------------------
+  data required time                                              1483.53
+  data arrival time                                              -1257.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                      226.22
+
+
+1

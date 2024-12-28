@@ -1,0 +1,481 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version T-2022.03 for linux64 - Feb 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+#  Set Libraries
+#======================================================
+set search_path { ../01_RTL \
+				  ./ 		\
+				  ../08_TECH/LIB
+				  /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/}
+ ../01_RTL  ./    ../08_TECH/LIB
+      /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/
+set link_library {dw_foundation.sldb }
+dw_foundation.sldb 
+set synthetic_library {dw_foundation.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db}
+dw_foundation.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db
+set target_library {asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db }
+asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db 
+#======================================================
+#  Global Parameters
+#======================================================
+set DESIGN "CIM_adder_tree"
+CIM_adder_tree
+set clk_period 1500
+1500
+# the unit of the clk period in here is ps
+set IN_DLY  [expr 0.5*$clk_period]
+750.0
+set OUT_DLY [expr 0.5*$clk_period]
+750.0
+#set hdlin_ff_always_sync_set_reset true
+#======================================================
+#  Read RTL Code
+#======================================================
+analyze -f sverilog $DESIGN\.v
+Running PRESTO HDLC
+Compiling source file ../01_RTL/CIM_adder_tree.v
+Presto compilation completed successfully.
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine CIM_adder_tree line 63 in file
+		'../01_RTL/CIM_adder_tree.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|       cnt_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CIM_adder_tree line 76 in file
+		'../01_RTL/CIM_adder_tree.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CIM_adder_tree line 93 in file
+		'../01_RTL/CIM_adder_tree.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  input_buffer_reg   | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CIM_adder_tree line 106 in file
+		'../01_RTL/CIM_adder_tree.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  shift_buffer_reg   | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CIM_adder_tree line 116 in file
+		'../01_RTL/CIM_adder_tree.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     Output_reg      | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (CIM_adder_tree)
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_AO_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_OA_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_INVBUF_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SEQ_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db'
+Elaborated 1 design.
+Current design is now 'CIM_adder_tree'.
+1
+#======================================================
+#  Global Setting
+#======================================================
+#======================================================
+#  Set Design Constraints
+#======================================================
+create_clock -name "clk" -period $clk_period clk
+1
+set_ideal_network -no_propagate clk
+1
+set_input_delay  $IN_DLY -clock clk [all_inputs]
+1
+set_output_delay $OUT_DLY  -clock clk [all_outputs]
+1
+set_input_delay 0 -clock clk clk
+1
+set_input_delay 0 -clock clk rst_n
+1
+set_load 0.05 [all_outputs]
+1
+#set_max_fanout 10 [all_inputs]
+#set_dont_use slow/JKFF*
+#======================================================
+#  Optimization
+#======================================================
+uniquify
+1
+check_design > Report/$DESIGN\.check
+set_fix_multiple_port_nets -all -buffer_constants
+1
+set_fix_hold [all_clocks]
+1
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        | S-2021.06-DWBB_202106.0 |     *     |
+| asap7sc7p5t_AO_RVT_TT_08302018     | 1.0                     |           |
+| asap7sc7p5t_OA_RVT_TT_08302018     | 1.0                     |           |
+| asap7sc7p5t_INVBUF_RVT_TT_08302018 | 1.0                     |           |
+| asap7sc7p5t_SEQ_RVT_TT_08302018    | 1.0                     |           |
+| asap7sc7p5t_SIMPLE_RVT_TT_08302018 | 1.0                     |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 94                                     |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 39                                     |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch cells                              | 7                                      |
+| Number of Dont Touch nets                               | 1                                      |
+| Number of size only cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+  Loading target library 'asap7sc7p5t_INVBUF_RVT_TT_08302018'
+  Loading target library 'asap7sc7p5t_SIMPLE_RVT_TT_08302018'
+  Loading target library 'asap7sc7p5t_SEQ_RVT_TT_08302018'
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'CIM_adder_tree'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'CIM_adder_tree_DW01_add_0'
+  Mapping 'DW_leftsh'
+Information: Added key list 'DesignWare' to design 'CIM_adder_tree'. (DDB-72)
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width5' (rpl)
+  Processing 'DW01_add_width5'
+  Building model 'DW01_add_width6' (rpl)
+  Processing 'DW01_add_width6'
+  Building model 'DW01_add_width7' (rpl)
+  Processing 'DW01_add_width7'
+  Building model 'DW01_add_width8' (rpl)
+  Processing 'DW01_add_width8'
+  Building model 'DW01_add_width9' (rpl)
+  Processing 'DW01_add_width9'
+  Processing 'CIM_adder_tree_DW01_add_1'
+  Processing 'CIM_adder_tree_DW01_add_2'
+  Processing 'CIM_adder_tree_DW01_add_3'
+  Processing 'CIM_adder_tree_DW01_add_4'
+  Processing 'CIM_adder_tree_DW01_add_5'
+  Processing 'CIM_adder_tree_DW01_add_6'
+  Processing 'CIM_adder_tree_DW01_add_7'
+  Processing 'CIM_adder_tree_DW01_add_8'
+  Processing 'CIM_adder_tree_DW01_add_9'
+  Processing 'CIM_adder_tree_DW01_add_10'
+  Processing 'CIM_adder_tree_DW01_add_11'
+  Processing 'CIM_adder_tree_DW01_add_12'
+  Processing 'CIM_adder_tree_DW01_add_13'
+  Processing 'CIM_adder_tree_DW01_add_14'
+  Processing 'CIM_adder_tree_DW01_add_15'
+  Processing 'CIM_adder_tree_DW01_add_16'
+  Processing 'CIM_adder_tree_DW01_add_17'
+  Processing 'CIM_adder_tree_DW01_add_18'
+  Processing 'CIM_adder_tree_DW01_add_19'
+  Processing 'CIM_adder_tree_DW01_add_20'
+  Processing 'CIM_adder_tree_DW01_add_21'
+  Processing 'CIM_adder_tree_DW01_add_22'
+  Processing 'CIM_adder_tree_DW01_add_23'
+  Processing 'CIM_adder_tree_DW01_add_24'
+  Processing 'CIM_adder_tree_DW01_add_25'
+  Processing 'CIM_adder_tree_DW01_add_26'
+  Processing 'CIM_adder_tree_DW01_add_27'
+  Processing 'CIM_adder_tree_DW01_add_28'
+  Processing 'CIM_adder_tree_DW01_add_29'
+  Processing 'CIM_adder_tree_DW01_add_30'
+  Processing 'CIM_adder_tree_DW01_add_31'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+LNC WARNING: Found output_to_output lib arc on HAxp5_ASAP7_75t_R.
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    1227.5      0.00       0.0       0.0                                0.00  
+    0:00:01    1227.5      0.00       0.0       0.0                                0.00  
+    0:00:01    1227.5      0.00       0.0       0.0                                0.00  
+    0:00:01    1227.5      0.00       0.0       0.0                                0.00  
+    0:00:01    1227.5      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1162.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1133.0      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    1133.0      0.00       0.0       0.0                                0.00  
+    0:00:01    1133.0      0.00       0.0       0.0                                0.00  
+    0:00:01    1099.0      0.00       0.0       0.0                                0.00  
+    0:00:01    1087.3      0.00       0.0       0.0                                0.00  
+    0:00:01    1083.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1083.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1083.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1083.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1082.4      0.00       0.0       0.0                                0.00  
+    0:00:01    1081.0      0.00       0.0       0.0                                0.00  
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_INVBUF_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SEQ_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_AO_RVT_TT_08302018.db'
+Loading db file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_OA_RVT_TT_08302018.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+#======================================================
+#  Output Reports
+#======================================================
+report_timing            >  Report/$DESIGN\.timimg
+report_area              >  Report/$DESIGN\.area
+report_resource          >  Report/$DESIGN\.resource
+#======================================================
+#  Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+change_names -hierarchy -rules name_rule
+1
+#======================================================
+#  Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/final_project/CIM_macro/02_SYN/Netlist/CIM_adder_tree_SYN.v'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/final_project/CIM_macro/02_SYN/Netlist/CIM_adder_tree_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  Finish and Quit
+#======================================================
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CIM_adder_tree
+Version: T-2022.03
+Date   : Sat Dec 28 17:04:49 2024
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_INVBUF_RVT_TT_08302018
+Wire Load Model Mode: top
+
+  Startpoint: Input_23[0]
+              (input port clocked by clk)
+  Endpoint: input_buffer_reg_7_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                  750.00     750.00 r
+  Input_23[0] (in)                                        0.00     750.00 r
+  U142/Y (AND2x2_ASAP7_75t_R)                            18.28     768.28 r
+  add_22_root_add_0_root_add_98_31_U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         36.43     804.71 f
+  U223/Y (INVx1_ASAP7_75t_R)                             16.43     821.15 r
+  add_10_root_add_0_root_add_98_31_U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         39.52     860.67 f
+  U235/Y (INVx1_ASAP7_75t_R)                             16.66     877.32 r
+  add_4_root_add_0_root_add_98_31_U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         39.56     916.88 f
+  U263/Y (INVx1_ASAP7_75t_R)                             16.66     933.55 r
+  add_1_root_add_0_root_add_98_31_U1_1/SN (FAx1_ASAP7_75t_R)
+                                                         36.50     970.05 r
+  U435/Y (INVx1_ASAP7_75t_R)                             17.50     987.55 f
+  add_0_root_add_0_root_add_98_31/B[1] (CIM_adder_tree_DW01_add_1)
+                                                          0.00     987.55 f
+  add_0_root_add_0_root_add_98_31/U1_1/CON (FAx1_ASAP7_75t_R)
+                                                         22.82    1010.37 r
+  add_0_root_add_0_root_add_98_31/U8/Y (INVx1_ASAP7_75t_R)
+                                                         15.19    1025.57 f
+  add_0_root_add_0_root_add_98_31/U1_2/CON (FAx1_ASAP7_75t_R)
+                                                         20.28    1045.85 r
+  add_0_root_add_0_root_add_98_31/U7/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1061.11 f
+  add_0_root_add_0_root_add_98_31/U1_3/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1081.41 r
+  add_0_root_add_0_root_add_98_31/U6/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1096.68 f
+  add_0_root_add_0_root_add_98_31/U1_4/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1116.98 r
+  add_0_root_add_0_root_add_98_31/U5/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1132.25 f
+  add_0_root_add_0_root_add_98_31/U1_5/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1152.54 r
+  add_0_root_add_0_root_add_98_31/U4/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1167.81 f
+  add_0_root_add_0_root_add_98_31/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         20.30    1188.11 r
+  add_0_root_add_0_root_add_98_31/U3/Y (INVx1_ASAP7_75t_R)
+                                                         15.27    1203.38 f
+  add_0_root_add_0_root_add_98_31/U1_7/SN (FAx1_ASAP7_75t_R)
+                                                         35.42    1238.80 r
+  add_0_root_add_0_root_add_98_31/U10/Y (INVx1_ASAP7_75t_R)
+                                                         10.95    1249.75 f
+  add_0_root_add_0_root_add_98_31/SUM[7] (CIM_adder_tree_DW01_add_1)
+                                                          0.00    1249.75 f
+  U496/Y (INVx1_ASAP7_75t_R)                              7.55    1257.30 r
+  input_buffer_reg_7_/D (ASYNC_DFFHx1_ASAP7_75t_R)        0.00    1257.30 r
+  data arrival time                                               1257.30
+
+  clock clk (rise edge)                                1500.00    1500.00
+  clock network delay (ideal)                             0.00    1500.00
+  input_buffer_reg_7_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)      0.00    1500.00 r
+  library setup time                                    -16.47    1483.53
+  data required time                                              1483.53
+  --------------------------------------------------------------------------
+  data required time                                              1483.53
+  data arrival time                                              -1257.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                      226.22
+
+
+1
+exit
+
+Memory usage for this session 170 Mbytes.
+Memory usage for this session including child processes 170 Mbytes.
+CPU usage for this session 4 seconds ( 0.00 hours ).
+Elapsed time for this session 8 seconds ( 0.00 hours ).
+
+Thank you...

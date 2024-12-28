@@ -1,0 +1,20 @@
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03
+Date:        Sat Dec 28 17:04:45 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unconnected ports (LINT-28)                                     1
+
+Cells                                                               2
+    Cells do not drive (LINT-1)                                     2
+--------------------------------------------------------------------------------
+
+Warning: In design 'CIM_adder_tree', cell 'C154' does not drive any nets. (LINT-1)
+Warning: In design 'CIM_adder_tree', cell 'C160' does not drive any nets. (LINT-1)
+Warning: In design 'CIM_adder_tree', port 'input_valid' is not connected to any nets. (LINT-28)
+1

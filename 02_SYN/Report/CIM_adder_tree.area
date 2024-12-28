@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : CIM_adder_tree
+Version: T-2022.03
+Date   : Sat Dec 28 17:04:49 2024
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_SIMPLE_RVT_TT_08302018 (File: /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db)
+    asap7sc7p5t_INVBUF_RVT_TT_08302018 (File: /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_INVBUF_RVT_TT_08302018.db)
+    asap7sc7p5t_SEQ_RVT_TT_08302018 (File: /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/asap7sc7p5t_SEQ_RVT_TT_08302018.db)
+
+Number of ports:                          215
+Number of nets:                           945
+Number of cells:                          623
+Number of combinational cells:            582
+Number of sequential cells:                39
+Number of macros/black boxes:               0
+Number of buf/inv:                        281
+Number of references:                      13
+
+Combinational area:                844.473594
+Buf/Inv area:                      197.121603
+Noncombinational area:             236.545918
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1081.019512
+Total area:                 undefined
+1

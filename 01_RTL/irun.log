@@ -1,0 +1,80 @@
+irun(64): 15.20-s084: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s084: Started on Dec 28, 2024 at 17:03:50 CST
+irun
+	../00_TESTBED/TESTBED.v
+	-define RTL
+	-debug
+	-notimingchecks
+	-loadpli1 debpli:novas_pli_boot
+file: ../00_TESTBED/TESTBED.v
+	module worklib.PATTERN:v
+		errors: 0, warnings: 0
+	module worklib.CIM_adder_tree:v
+		errors: 0, warnings: 0
+	module worklib.TESTBED:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		TESTBED
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.CIM_adder_tree:v <0x143fe938>
+			streams:   7, words:  4184
+		worklib.PATTERN:v <0x416c03b4>
+			streams:  13, words: 36383
+		worklib.TESTBED:v <0x5e21b6e6>
+			streams:   1, words:  1253
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:              52      52
+		Scalar wires:            4       -
+		Vectored wires:         33       -
+		Always blocks:           6       6
+		Initial blocks:          4       4
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.TESTBED:v
+Loading snapshot worklib.TESTBED:v .................... Done
+*Verdi* Loading libsscore_ius152.so
+ncsim> source /usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi_P-2019.06, Linux x86_64/64bit, 05/26/2019
+(C) 1996 - 2019 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'CIM_adder_tree.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+Golden_Output = 1792
+[0;34mPASS PATTERN NO.   0,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1925
+[0;34mPASS PATTERN NO.   1,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1988
+[0;34mPASS PATTERN NO.   2,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 2247
+[0;34mPASS PATTERN NO.   3,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1935
+[0;34mPASS PATTERN NO.   4,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1672
+[0;34mPASS PATTERN NO.   5,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1591
+[0;34mPASS PATTERN NO.   6,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1966
+[0;34mPASS PATTERN NO.   7,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1788
+[0;34mPASS PATTERN NO.   8,[m [0;32mexecution cycle :    0,[m
+Golden_Output = 1916
+[0;34mPASS PATTERN NO.   9,[m [0;32mexecution cycle :    0,[m
+----------------------------------------------------------------------------------------------------------------------
+                                                  Congratulations!                                                    
+                                           You have passed all patterns!                                              
+----------------------------------------------------------------------------------------------------------------------
+Simulation complete via $finish(1) at time 38625 PS + 0
+../00_TESTBED/PATTERN.v:266 $finish;    
+ncsim> exit
+TOOL:	irun(64)	15.20-s084: Exiting on Dec 28, 2024 at 17:03:51 CST  (total: 00:00:01)
