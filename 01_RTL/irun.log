@@ -1,17 +1,16 @@
 irun(64): 15.20-s084: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
-TOOL:	irun(64)	15.20-s084: Started on Dec 28, 2024 at 17:03:50 CST
+TOOL:	irun(64)	15.20-s084: Started on Dec 30, 2024 at 02:34:34 CST
 irun
 	../00_TESTBED/TESTBED.v
 	-define RTL
 	-debug
 	-notimingchecks
 	-loadpli1 debpli:novas_pli_boot
+Recompiling... reason: file '../00_TESTBED/PATTERN.v' is newer than expected.
+	expected: Mon Dec 30 02:33:07 2024
+	actual:   Mon Dec 30 02:34:30 2024
 file: ../00_TESTBED/TESTBED.v
 	module worklib.PATTERN:v
-		errors: 0, warnings: 0
-	module worklib.CIM_adder_tree:v
-		errors: 0, warnings: 0
-	module worklib.TESTBED:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -19,19 +18,17 @@ file: ../00_TESTBED/TESTBED.v
 		TESTBED
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.CIM_adder_tree:v <0x143fe938>
-			streams:   7, words:  4184
-		worklib.PATTERN:v <0x416c03b4>
-			streams:  13, words: 36383
-		worklib.TESTBED:v <0x5e21b6e6>
+		worklib.PATTERN:v <0x41845df6>
+			streams:  13, words: 31973
+		worklib.TESTBED:v <0x4e25d3e5>
 			streams:   1, words:  1253
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 3       3
-		Registers:              52      52
-		Scalar wires:            4       -
+		Registers:              51      51
+		Scalar wires:            3       -
 		Vectored wires:         33       -
 		Always blocks:           6       6
 		Initial blocks:          4       4
@@ -74,7 +71,7 @@ Golden_Output = 1916
                                                   Congratulations!                                                    
                                            You have passed all patterns!                                              
 ----------------------------------------------------------------------------------------------------------------------
-Simulation complete via $finish(1) at time 38625 PS + 0
-../00_TESTBED/PATTERN.v:266 $finish;    
+Simulation complete via $finish(1) at time 77250 PS + 0
+../00_TESTBED/PATTERN.v:292 $finish;    
 ncsim> exit
-TOOL:	irun(64)	15.20-s084: Exiting on Dec 28, 2024 at 17:03:51 CST  (total: 00:00:01)
+TOOL:	irun(64)	15.20-s084: Exiting on Dec 30, 2024 at 02:34:35 CST  (total: 00:00:01)

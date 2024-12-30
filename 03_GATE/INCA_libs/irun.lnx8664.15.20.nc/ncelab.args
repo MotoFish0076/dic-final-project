@@ -6,11 +6,6 @@
 +rw
 -LOADPLI1
 debpli:novas_pli_boot
--timescale
-1ns/10fs
--OVERRIDE_PRECISION
--SDF_PRECISION
-10fs
 -MESSAGES
 -XLMODE
 ./INCA_libs/irun.lnx8664.15.20.nc

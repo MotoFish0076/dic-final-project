@@ -3,7 +3,6 @@ module CIM_adder_tree(
 	//input
     rst_n,
     clk,
-    input_valid,
     Input_1, Input_2, Input_3, Input_4, Input_5, Input_6, Input_7, Input_8, 
     Input_9, Input_10, Input_11, Input_12, Input_13, Input_14, Input_15, Input_16, 
     Input_17, Input_18, Input_19, Input_20, Input_21, Input_22, Input_23, Input_24, 
@@ -16,7 +15,6 @@ module CIM_adder_tree(
 
 input rst_n;
 input clk;
-input input_valid;
 input [3:0]Input_1;
 input [3:0]Input_2;
 input [3:0]Input_3;
@@ -55,7 +53,7 @@ output reg [12:0]Output;
 
 reg [2:0]  cnt;
 reg [8:0]  input_buffer;
-reg [12:0] shift_buffer;
+reg [11:0] shift_buffer;
 
 integer i;
 

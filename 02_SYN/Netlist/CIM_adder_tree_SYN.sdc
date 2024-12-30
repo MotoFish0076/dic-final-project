@@ -1,12 +1,11 @@
 ###################################################################
 
-# Created by write_sdc on Sat Dec 28 17:04:49 2024
+# Created by write_sdc on Sun Dec 29 22:58:48 2024
 
 ###################################################################
 set sdc_version 2.1
 
-set_units -time ns -resistance 1.000000e+04kOhm -capacitance 1.000000e-04pF    \
--voltage V -current uA
+set_units -time ps -resistance kOhm -capacitance fF -voltage V -current mA
 set_load -pin_load 0.05 [get_ports out_valid]
 set_load -pin_load 0.05 [get_ports {Output[12]}]
 set_load -pin_load 0.05 [get_ports {Output[11]}]
@@ -25,7 +24,6 @@ set_ideal_network -no_propagate  [get_ports clk]
 create_clock [get_ports clk]  -period 1500  -waveform {0 750}
 set_input_delay -clock clk  0  [get_ports clk]
 set_input_delay -clock clk  0  [get_ports rst_n]
-set_input_delay -clock clk  750  [get_ports input_valid]
 set_input_delay -clock clk  750  [get_ports {Input_1[3]}]
 set_input_delay -clock clk  750  [get_ports {Input_1[2]}]
 set_input_delay -clock clk  750  [get_ports {Input_1[1]}]

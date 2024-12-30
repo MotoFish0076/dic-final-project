@@ -1,0 +1,6 @@
+Command Line: /usr/cad/synopsys/verdi/2019.06/platform/LINUXAMD64/bin/fsdb2vcd /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/final_project/CIM_macro/03_GATE/CIM_adder_tree_SYN.fsdb
+uname(Linux ee22 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64)
+Load signals (0)-(77250) time 0.013066 0.028701 0.099511 delta 75034624 75034624 total 374321152 374321152
+Write signals (0)-(77250) time 0.036881 0.035661 0.001209 delta 286720 286720 total 374607872 374607872
+Unload (0)-(77250) time 0.000647 0.000249 0.000399 delta 0 0 total 374607872 374607872
+au time 0.420222 0.079848 0.120043 delta 106225664 106225664 total 210362368 210362368

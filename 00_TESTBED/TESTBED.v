@@ -12,7 +12,6 @@ module TESTBED;
    //input
 	wire clk;
 	wire rst_n;
-    wire input_valid;
     wire [3:0]Input_1;
     wire [3:0]Input_2;
     wire [3:0]Input_3;
@@ -63,18 +62,17 @@ initial begin
     $fsdbDumpvars(0,"+mda");
     $fsdbDumpvars();
     `endif
-    // `ifdef GATE
-    // $sdf_annotate("../02_SYN/Netlist/Convolution_without_pipeline_SYN.sdf",u_Convolution_without_pipeline);
-    // $fsdbDumpfile("Convolution_without_pipeline_SYN.fsdb");
-    // $fsdbDumpvars(0,"+mda");
-    // $fsdbDumpvars();
-    // `endif
+    `ifdef GATE
+    $sdf_annotate("../02_SYN/Netlist/CIM_adder_tree_SYN.sdf",u_CIM_unit);
+    $fsdbDumpfile("CIM_adder_tree_SYN.fsdb");
+    $fsdbDumpvars(0,"+mda");
+    $fsdbDumpvars();
+    `endif
 end
 
 PATTERN	u_PATTERN(
 		.clk(clk),
 		.rst_n(rst_n),
-        .input_valid(input_valid),
 		.Input_1(Input_1),
         .Input_2(Input_2),
         .Input_3(Input_3),
@@ -115,7 +113,6 @@ PATTERN	u_PATTERN(
 CIM_adder_tree u_CIM_unit(
 		.clk(clk),
 		.rst_n(rst_n),
-        .input_valid(input_valid),
 		.Input_1(Input_1),
         .Input_2(Input_2),
         .Input_3(Input_3),
@@ -157,7 +154,6 @@ CIM_adder_tree u_CIM_unit(
 CIM_adder_tree u_CIM_unit(
 		.clk(clk),
 		.rst_n(rst_n),
-        .input_valid(input_valid),
 		.Input_1(Input_1),
         .Input_2(Input_2),
         .Input_3(Input_3),

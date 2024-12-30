@@ -1,0 +1,5 @@
+Information: Running time_based power analysis... (PWR-601)
+Information: Reading vcd file '/RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/final_project/CIM_macro/03_GATE/CIM_adder_tree_SYN.fsdb'
+Error: Can not find any event in the event file.  (PWR-248)
+Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
+0

@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 
 `ifdef RTL
-    `define CYCLE_TIME 0.75
+    `define CYCLE_TIME 1.5
 `endif
 `ifdef GATE
-    `define CYCLE_TIME 0.85
+    `define CYCLE_TIME 1.5
 `endif
 //==============================================
 //==============================================                    
@@ -19,7 +19,6 @@
 module PATTERN	(
     rst_n,
     clk,
-    input_valid,
 	// output
     Input_1, Input_2, Input_3, Input_4, Input_5, Input_6, Input_7, Input_8, 
     Input_9, Input_10, Input_11, Input_12, Input_13, Input_14, Input_15, Input_16, 
@@ -36,7 +35,6 @@ module PATTERN	(
 //------------------------------
 output reg rst_n;
 output reg clk;
-output reg input_valid;
 output reg [3:0]Input_1;
 output reg [3:0]Input_2;
 output reg [3:0]Input_3;
@@ -104,7 +102,7 @@ initial begin
         // wait_outout_task;
         check_output_task;
         Golden_Output = 'd0;
-
+        // display_weights;
         $display("\033[0;34mPASS PATTERN NO.%4d,\033[m \033[0;32mexecution cycle : %4d,\033[m", j, latency);
     end
     pass_task;
@@ -117,7 +115,6 @@ end
 task reset_task; begin
     force clk = 0;
     rst_n = 1;
-    input_valid = 'd0;
     latency = 0;
     Golden_Output = 0;
     shift_amount = 'd3;
@@ -136,12 +133,13 @@ task gen_input_task; begin
     for (i = 0; i < 32; i = i + 1) begin
         pat_Input[i] = {$random(seed)} % 16;
         Golden_Output = Golden_Output + pat_Input[i] * weight[i];
+        // $display("pat_Input[%0d] = %0d", i, pat_Input[i]);
     end
     $display("Golden_Output = %0d", Golden_Output);
 end endtask
 
 task wait_outout_task; begin
-    while (out_valid === 0) begin
+    while (out_valid !== 1) begin
         latency = latency + 1;
         if(latency >= 3000)begin
             $display ("----------------------------------------------------------------------------------------------------------------------");
@@ -150,10 +148,40 @@ task wait_outout_task; begin
             $display ("----------------------------------------------------------------------------------------------------------------------");
             $finish;  
         end
-        // @(negedge clk);      
+        // Input_1 = 'dx;
+        // Input_2 = 'dx;
+        // Input_3 = 'dx;
+        // Input_4 = 'dx;
+        // Input_5 = 'dx;
+        // Input_6 = 'dx;
+        // Input_7 = 'dx;
+        // Input_8 = 'dx;
+        // Input_9 = 'dx;
+        // Input_10 = 'dx;
+        // Input_11 = 'dx;
+        // Input_12 = 'dx;
+        // Input_13 = 'dx;
+        // Input_14 = 'dx;
+        // Input_15 = 'dx;
+        // Input_16 = 'dx;
+        // Input_17 = 'dx;
+        // Input_18 = 'dx;
+        // Input_19 = 'dx;
+        // Input_20 = 'dx;
+        // Input_21 = 'dx;
+        // Input_22 = 'dx;
+        // Input_23 = 'dx;
+        // Input_24 = 'dx;
+        // Input_25 = 'dx;
+        // Input_26 = 'dx;
+        // Input_27 = 'dx;
+        // Input_28 = 'dx;
+        // Input_29 = 'dx;
+        // Input_30 = 'dx;
+        // Input_31 = 'dx;
+        // Input_32 = 'dx;
+        @(negedge clk);      
     end
-    // $display("latency = %0d", latency);
-    // $display("out_valid = %0d", out_valid);
 end endtask
 
 task check_output_task; begin
@@ -170,7 +198,6 @@ task check_output_task; begin
 end endtask
 
 task send_input_task; begin
-    input_valid = 1;
     for (i = 3; i >= 0; i = i - 1) begin
         Input_1 = weight[0] * pat_Input[0][i];
         Input_2 = weight[1] * pat_Input[1][i];
@@ -207,39 +234,38 @@ task send_input_task; begin
         @(negedge clk); 
     end
     // Set pattern signal
-    input_valid = 0;
-    Input_1 = 'dx;
-    Input_2 = 'dx;
-    Input_3 = 'dx;
-    Input_4 = 'dx;
-    Input_5 = 'dx;
-    Input_6 = 'dx;
-    Input_7 = 'dx;
-    Input_8 = 'dx;
-    Input_9 = 'dx;
-    Input_10 = 'dx;
-    Input_11 = 'dx;
-    Input_12 = 'dx;
-    Input_13 = 'dx;
-    Input_14 = 'dx;
-    Input_15 = 'dx;
-    Input_16 = 'dx;
-    Input_17 = 'dx;
-    Input_18 = 'dx;
-    Input_19 = 'dx;
-    Input_20 = 'dx;
-    Input_21 = 'dx;
-    Input_22 = 'dx;
-    Input_23 = 'dx;
-    Input_24 = 'dx;
-    Input_25 = 'dx;
-    Input_26 = 'dx;
-    Input_27 = 'dx;
-    Input_28 = 'dx;
-    Input_29 = 'dx;
-    Input_30 = 'dx;
-    Input_31 = 'dx;
-    Input_32 = 'dx;
+    // Input_1 = 'dx;
+    // Input_2 = 'dx;
+    // Input_3 = 'dx;
+    // Input_4 = 'dx;
+    // Input_5 = 'dx;
+    // Input_6 = 'dx;
+    // Input_7 = 'dx;
+    // Input_8 = 'dx;
+    // Input_9 = 'dx;
+    // Input_10 = 'dx;
+    // Input_11 = 'dx;
+    // Input_12 = 'dx;
+    // Input_13 = 'dx;
+    // Input_14 = 'dx;
+    // Input_15 = 'dx;
+    // Input_16 = 'dx;
+    // Input_17 = 'dx;
+    // Input_18 = 'dx;
+    // Input_19 = 'dx;
+    // Input_20 = 'dx;
+    // Input_21 = 'dx;
+    // Input_22 = 'dx;
+    // Input_23 = 'dx;
+    // Input_24 = 'dx;
+    // Input_25 = 'dx;
+    // Input_26 = 'dx;
+    // Input_27 = 'dx;
+    // Input_28 = 'dx;
+    // Input_29 = 'dx;
+    // Input_30 = 'dx;
+    // Input_31 = 'dx;
+    // Input_32 = 'dx;
     @(negedge clk); 
 end endtask
 

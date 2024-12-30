@@ -6,8 +6,3 @@
 +rw
 -LOADPLI1
 debpli:novas_pli_boot
--timescale
-1ns/10fs
--OVERRIDE_PRECISION
--SDF_PRECISION
-10fs

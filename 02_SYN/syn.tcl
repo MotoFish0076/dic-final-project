@@ -9,12 +9,13 @@
 #======================================================
 set search_path { ../01_RTL \
 				  ./ 		\
-				  ../08_TECH/LIB
+				  ../08_TECH/LIB\
 				  /RAID2/COURSE/2024_Fall/icst_dic/icst_dic134/NLDM/}
 
-set link_library {dw_foundation.sldb }
-set synthetic_library {dw_foundation.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db}
-set target_library {asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db }
+# ^^^^^ remember to add your lib(.db) path here ^^^^^
+set synthetic_library {dw_foundation.sldb}
+set link_library {* dw_foundation.sldb standard.sldb asap7sc7p5t_AO_RVT_TT_08302018.db asap7sc7p5t_OA_RVT_TT_08302018.db asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_AO_RVT_TT_08302018.db  asap7sc7p5t_OA_RVT_TT_08302018.db}
+set target_library {asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT_TT_08302018.db asap7sc7p5t_SEQ_RVT_TT_08302018.db}     
 
 
 #======================================================
@@ -22,7 +23,7 @@ set target_library {asap7sc7p5t_INVBUF_RVT_TT_08302018.db asap7sc7p5t_SIMPLE_RVT
 #======================================================
 set DESIGN "CIM_adder_tree"
 set clk_period 1500
-# the unit of the clk period in here is ps
+# the unit of the clk period  in here is ps 
 set IN_DLY  [expr 0.5*$clk_period]
 set OUT_DLY [expr 0.5*$clk_period]
 
@@ -31,8 +32,8 @@ set OUT_DLY [expr 0.5*$clk_period]
 #======================================================
 #  Read RTL Code
 #======================================================
-analyze -f sverilog $DESIGN\.v
-elaborate $DESIGN
+analyze -f sverilog $DESIGN\.v 
+elaborate $DESIGN  
 
 #======================================================
 #  Global Setting
@@ -59,7 +60,7 @@ uniquify
 check_design > Report/$DESIGN\.check
 set_fix_multiple_port_nets -all -buffer_constants
 set_fix_hold [all_clocks]
-compile
+compile_ultra 
 #no_autoungroup -no_seq_output_inversion -no_boundary_optimization
 
 #======================================================
